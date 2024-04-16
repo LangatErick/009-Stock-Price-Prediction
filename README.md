@@ -1,5 +1,6 @@
 # Project-Tesla-Stock-Price-Prediction
 In this project, Exploratory Data Analysis is carried out on TESLA Stock. Here, EDA is performed with different data analysis technologies viz. R  is used to predict the stock prices for January and also to predict percentage increases or decreases in the stock prices.
+![image](https://github.com/LangatErick/Project-Tesla-Stock-Price-Prediction/assets/124883947/801a8c48-0f7f-4e83-98db-323877b246b7)
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
