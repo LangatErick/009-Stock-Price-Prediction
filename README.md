@@ -62,9 +62,9 @@ TSLA %>%
   )
 
 ```
+![image](https://github.com/LangatErick/Project-Tesla-Stock-Price-Prediction/assets/124883947/94e4699d-9c5a-4c06-9d46-ad2133a1b273)
 
 ### Find Simple Moving Averages for 30, 100 and 200 days
-
 ```{r warning=FALSE, message=FALSE}
 TSLA1 <- TSLA %>%
   mutate(SMA_30 = rollmean(Close, k = 30, fill = NA),
@@ -104,6 +104,7 @@ ggplot(data = tesla_data_long, aes(x = Date, y = Value, color = Series)) +
     hjust = 1
   ))
 ```
+![image](https://github.com/LangatErick/Project-Tesla-Stock-Price-Prediction/assets/124883947/7c98f701-0e2d-428a-80fe-f28360c72a06)
 
 ### Calculate rolling standard deviation for 100 day and perform Volatility Analysis
 
@@ -132,6 +133,7 @@ ggplot(data = tesla_data, aes(x = Date)) +
     legend.position="none"
 )
 ```
+![image](https://github.com/LangatErick/Project-Tesla-Stock-Price-Prediction/assets/124883947/4626661e-9b35-4d59-a875-ef95a4543e4f)
 
 ### Perform Seasonal Trend Analysis by calculating monthly average prices.
 
@@ -140,7 +142,7 @@ ggplot(data = tesla_data, aes(x = Date)) +
 tesla_data <- TSLA1 %>%
   mutate(Month = format(Date, "%Y-%m"))
 
-# Calculate average stock price for each month
+# Calculate the average stock price for each month
 monthly_avg <- tesla_data %>%
   group_by(Month) %>%
   summarize(Avg_Price = mean(Close, na.rm = TRUE))
@@ -160,3 +162,4 @@ ggplot(monthly_avg, aes(x = Month, y = Avg_Price)) +
     panel.grid.minor = element_blank()
 )
 ```
+![image](https://github.com/LangatErick/Project-Tesla-Stock-Price-Prediction/assets/124883947/ec416eb3-af6f-49dc-a7a3-04ff271d87f3)
